@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="ammo/jquery-3.6.1.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .goal {
+    position: absolute;
+    right: 5%;
+  }
+
+  .gameover {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+
+  .gameover span {
+
+    font-size: -webkit-xxx-large;
+    font-weight: bold;
+  }
+
+  .gameover * {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gameover button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .gamepadArrow {
+    position: absolute;
+    bottom: 4%;
+  }
+
+  .gameover h1 {
+    text-align: center;
+    font-size: xxx-large;
+    margin: 0;
+  }
+
+  .gamepadArrow div {
+    display: inline;
+  }
+
+  #shotbutton {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
+  }
+
+  button img {
+    width: 50%;
+  }
+
+  #startgame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffffbf;
+  }
+
+  #startgame button {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    font-size: 33px;
+  }
+</style>
+
+<body id="mainbody">
+  <div id="loadingbar" class="gameover">
+    <h1>Loading</h1>
+    <img src="assets/loading.gif">
+  </div>
+  <div id="startgame" style="display: none;">
+    <button id="startgameButton">Start Game</button>
+  </div>
+  <div id="maindiv" style="display: none;">
+    <h1 class="goal">Score <span id="goalcount">0</span></h1>
+    <div id="gameoverdiv" style="display: none;" class="gameover">
+      <Span>Game Over</Span><br>
+      <button onclick="window.location.reload()">Try Again</button>
+    </div>
+    <!-- <div class="gamepadArrow">
+      <button id="leftbutton" type="button">
+        <img src="/assets/left.png">
+      </button>
+      <button id="rightbutton" type="button">
+        <img src="/assets/right.png">
+      </button>
+    </div> -->
+    <!-- <button id="shotbutton" type="button">
+      <img src="/assets/shot.png" />
+    </button> -->
+  </div>
+</body>
+<script src="./bundle.js"></script>
+<script>
+  $('img').bind('contextmenu', function (e) {
+    return false;
+  }); 
+</script>
+
+</html>
